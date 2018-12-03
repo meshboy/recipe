@@ -11,7 +11,7 @@ Vue.use(VueApollo);
 
 const baseUrl = "http://localhost:3000/recipe";
 
-const httpLink = apolloUploadClient.createUploadLink({
+const uploadClientLink = apolloUploadClient.createUploadLink({
   uri: baseUrl
 });
 
@@ -27,7 +27,7 @@ const interceptor = setContext((request, previousContext) => {
 });
 
 const apolloClient = new ApolloClient({
-  link: interceptor.concat(httpLink),
+  link: interceptor.concat(uploadClientLink),
   cache: new InMemoryCache(),
   connectToDevTools: true
 });
