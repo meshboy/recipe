@@ -23,7 +23,7 @@ input UpdateRecipe {
   name: String
   description: String
   difficultyLevel: Int!
-  fileUrl: String
+  image: String
   steps: [String]
   averageTimeForCompletion: Int!
 }
