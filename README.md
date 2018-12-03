@@ -1,4 +1,4 @@
-# A Recipe Application to demonstrate how to use GraphQL to query a data built with NodeJs for server side and VueJs for client side
+## A Recipe Application to demonstrate how to use GraphQL to query a data built with NodeJs for server side and VueJs for client side
 
 ## Project Setup
 
