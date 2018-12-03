@@ -1,0 +1,46 @@
+type Recipe {
+  id: ID!
+  name: String!
+  description: String!
+  difficultyLevel: Int!
+  image: String
+  steps: [String]!
+  averageTimeForCompletion: Int!
+  user: User!
+}
+
+input NewRecipe {
+  name: String!
+  description: String!
+  difficultyLevel: Int!
+  image: Upload
+  steps: [String]! 
+  averageTimeForCompletion: Int!
+}
+
+input UpdateRecipe {
+  id: ID!
+  name: String
+  description: String
+  difficultyLevel: Int!
+  fileUrl: String
+  steps: [String]
+  averageTimeForCompletion: Int!
+}
+
+input DeleteRecipe {
+    id: ID!
+}
+
+# query is use when you want to get anything from the server just like (GET) using REST
+extend type Query {
+    Recipe(id: ID!): Recipe!
+    Recipes: [Recipe]!
+}
+
+# performing actions (that requires DELETE, PUT, POST) just as in REST requires a mutation 
+extend type Mutation {
+    deleteRecipe(input: DeleteRecipe!): Recipe!
+    updateRecipe(input: UpdateRecipe!): Recipe!
+    newRecipe(input: NewRecipe!): Recipe!
+}
